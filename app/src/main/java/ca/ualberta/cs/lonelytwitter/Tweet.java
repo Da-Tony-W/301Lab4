@@ -1,20 +1,43 @@
+
+/*
+ * Class Name: Tweet
+ * Version: Version 1.0
+ *
+ * Date: September 28, 2017
+ *
+ * Copyright (c) Team X, CMPUT301, University of Alberta - All Rights Reserved. You may use, distribute, or modify this code under terms and conditions of the Code of Students Behavior at University of Alberta
+ */
 package ca.ualberta.cs.lonelytwitter;
 
 import java.util.Date;
 
 /**
- * Created by watts1 on 9/12/17.
+ *  Represents a Tweet
+ *
+ *  @author CMPUT301 TAs, Da Wang(Tony)
+ *  @version 1.0
+ *  @see NormalTweet
+ *  @see ImportantTweet
+ *  @since 1.0
  */
-
 public abstract class Tweet {
+
 
     private String message;
     private Date date;
 
-    public Tweet(String message){
+
+    public Tweet(String message) {
         this.message = message;
         this.date = new Date();
     }
+
+    /**
+     * Constructs Tweet object
+     *
+     * @param message tweet message
+     * @param date tweet date
+     */
 
     public Tweet(String message, Date date) {
         this.message = message;
@@ -23,20 +46,23 @@ public abstract class Tweet {
 
     public abstract Boolean isImportant();
 
+    public String getMessage() {
+        return this.message;
+    }
 
+    /**
+     *  Sets tweet messages
+     *
+     * @param message Tweet message
+     * @throws TweetTooLongException
+     */
 
-
-
-    public void setMessage(String message) throws TweetTooLongException{
-        if (message.length() > 140){
+    public void setMessage(String message) throws TweetTooLongException {
+        if (message.length() > 140) {
             throw new TweetTooLongException();
         } else {
             this.message = message;
         }
-    }
-
-    public String getMessage(){
-        return this.message;
     }
 
     public Date getDate() {
