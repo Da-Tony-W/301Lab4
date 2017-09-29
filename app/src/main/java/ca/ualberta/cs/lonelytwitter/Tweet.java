@@ -1,4 +1,3 @@
-
 /*
  * Class Name: Tweet
  * Version: Version 1.0
