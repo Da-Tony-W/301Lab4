@@ -8,15 +8,15 @@
         android:id="@+id/oldTweetsTitle"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="My old tweets" />
-
+        android:text="@string/old_tweet" />
+    <!-- changed text to string resource -->
     <ListView
         android:id="@+id/oldTweetsList"
         android:layout_width="fill_parent"
-        android:layout_height="263dp"
+        android:layout_height="0dp"
         android:layout_weight="1"
         android:scrollbars="vertical" >
-
+        <!-- changed layout_height to "0dp" for better performance -->
     </ListView>
 
     <TextView
@@ -29,7 +29,10 @@
         android:id="@+id/body"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:scrollbars="horizontal" />
+        android:scrollbars="horizontal"
+        android:hint="Your tweet here"
+        android:inputType="text"/>
+    <!-- added hint and inputType -->
 
     <Button
         android:id="@+id/clear"
